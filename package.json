@@ -1,0 +1,30 @@
+{
+  "name": "mern-booking-app",
+  "version": "1.0.0",
+  "description": "Full-Stack Accommodation & Vacation Rental Booking Platform (MERN)",
+  "scripts": {
+    "api": "npm --prefix api run dev",
+    "api:start": "npm --prefix api start",
+    "client": "npm --prefix client run dev",
+    "client:build": "npm --prefix client run build",
+    "build": "npm --prefix client run build",
+    "dev": "concurrently \"npm run api\" \"npm run client\"",
+    "seed": "npm --prefix api run seed"
+  },
+  "keywords": [
+    "mern",
+    "booking",
+    "airbnb-clone",
+    "react",
+    "vite",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "Sachin",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+
