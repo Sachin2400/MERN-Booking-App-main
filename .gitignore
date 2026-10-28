@@ -20,6 +20,10 @@ api/.env.*
 api/uploads/*
 !api/uploads/.gitkeep
 
+# Interview & local documents
+*.pdf
+generate_*.py
+
 # Logs
 npm-debug.log*
 yarn-debug.log*
