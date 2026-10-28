@@ -17,7 +17,8 @@ export default function RegisterPage() {
       });
       alert('Registration successful. Now you can log in');
     } catch (e) {
-      alert('Registration failed. Please try again later');
+      const errorMsg = e.response?.data?.error || e.response?.data?.msg || e.message || 'Registration failed. Please try again later';
+      alert(errorMsg);
     }
   }
 

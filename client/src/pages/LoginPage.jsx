@@ -12,12 +12,13 @@ export default function LoginPage(){
     async function handleLoginSubmit(ev) {
         ev.preventDefault();
         try {
-          const {data} = await axios.post('/login', {email,password});
+            const {data} = await axios.post('/login', {email, password});
             setUser(data);
             alert('Login successful');
             setRedirect(true);
         } catch (e) {
-            alert('Login failed');
+            const errorMsg = e.response?.data?.error || e.response?.data?.msg || e.message || 'Login failed. Please check your credentials or verify backend server is running on port 4000.';
+            alert(errorMsg);
         }
     }
 

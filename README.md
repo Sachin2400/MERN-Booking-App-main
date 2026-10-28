@@ -1,6 +1,14 @@
-# 🏨 HotelBazaar — Full-Stack MERN Vacation Rental & Booking Platform
+# 🏨 HotelBazaar — Full-Stack Vacation Rental & Accommodation Platform
 
-A production-ready, full-stack **MERN (MongoDB, Express.js, React 18, Node.js)** accommodation booking and vacation rental web application inspired by Airbnb. Built with client-side routing, authenticated host listings, image uploading (via links or local files), date calculation engines, and reservation management.
+[![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5.1.0-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-v20-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-4.19-000000?logo=express&logoColor=white)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+A production-ready, full-stack **MERN (MongoDB, Express.js, React 18, Node.js)** accommodation booking and vacation rental web application inspired by Airbnb. Built with client-side SPA routing, authenticated host listings, multi-photo uploading (via URL scraping and local device uploads), real-time date calculation engines, and reservation management.
 
 ---
 
@@ -21,9 +29,10 @@ A production-ready, full-stack **MERN (MongoDB, Express.js, React 18, Node.js)**
 - **Listing Modifications**: Real-time updates to listing details, guest capacity, and nightly rates.
 
 ### 🛡️ Authentication & Security
-- **JWT Cookie Sessions**: Secure token signing stored in HTTP-Only browser cookies.
+- **JWT Cookie Sessions**: Secure token signing stored in HTTP-Only browser cookies (`sameSite: 'lax'`).
 - **Bcrypt Password Hashing**: Adaptive salt rounds protecting user credentials.
 - **Owner-Protected Mutations**: Verification middleware preventing unauthorized edits or deletions of other hosts' properties.
+- **Defensive API Guards**: Immediate 503 circuit-breaker status if the database cluster is unreachable, preventing unhandled request hang.
 
 ---
 
@@ -130,7 +139,7 @@ erDiagram
 ## 🚀 Quick Start Guide
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [Node.js](https://nodejs.org/) (v18 or v20 recommended)
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or local MongoDB instance
 
 ### 1-Click Launch (Windows)
@@ -146,7 +155,7 @@ Double-click **`START_BOOKING_APP.bat`** in the project root. It will automatica
 In `api/.env`:
 ```env
 PORT=4000
-MONGO_URL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/booking-app?retryWrites=true&w=majority
+MONGO_URL=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key_here
 CLIENT_URL=http://localhost:5173
 ```
@@ -162,7 +171,7 @@ Populate your database with sample luxury vacation rentals (Malibu villa, Aspen 
 cd api
 npm run seed
 ```
-> **Default Test Account:**
+> **Default Test Host Account:**
 > - Email: `host@example.com`
 > - Password: `password123`
 
@@ -180,6 +189,14 @@ npm run dev
 ```
 
 Visit **`http://localhost:5173`** in your browser.
+
+---
+
+## 👨‍💻 Author
+
+**Sachin Choudhary**
+- GitHub: [@Sachin2400](https://github.com/Sachin2400)
+- Email: sachin24250@gmail.com
 
 ---
 
